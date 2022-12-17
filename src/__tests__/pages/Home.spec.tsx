@@ -78,6 +78,7 @@ describe('Home', () => {
     fireEvent.changeText(inputElement, 'Segunda tarefa');
     fireEvent(inputElement, 'onEndEditing');
 
+    
     const firstTaskTrashIcon = getByTestId('trash-0');
 
     fireEvent(firstTaskTrashIcon, 'press');
