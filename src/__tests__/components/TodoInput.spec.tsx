@@ -14,7 +14,7 @@ describe('TodoInput', () => {
     const inputText = getByPlaceholderText('Adicionar novo todo...');
     
     fireEvent.changeText(inputText, 'Primeira task');
-    fireEvent(inputText, 'submitEditing');
+    fireEvent(inputText, 'onEndEditing');
 
     expect(mockedAddTask).toHaveBeenCalledWith('Primeira task');
     expect(inputText).toHaveProp('value', '');
