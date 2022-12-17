@@ -11,13 +11,13 @@ describe('Home', () => {
     expect(getByText('0 tarefas'));
 
     fireEvent.changeText(inputElement, 'Primeira tarefa');
-    fireEvent(inputElement, 'submitEditing');
+    fireEvent(inputElement, 'onEndEditing');
     
     expect(getByText('Primeira tarefa'));
     expect(getByText('1 tarefa'));
 
     fireEvent.changeText(inputElement, 'Segunda tarefa');
-    fireEvent(inputElement, 'submitEditing');
+    fireEvent(inputElement, 'onEndEditing');
 
     expect(getByText('Primeira tarefa'));
     expect(getByText('Segunda tarefa'));
@@ -29,7 +29,7 @@ describe('Home', () => {
     const inputElement = getByPlaceholderText('Adicionar novo todo...');
 
     fireEvent.changeText(inputElement, 'Primeira tarefa');
-    fireEvent(inputElement, 'submitEditing');
+    fireEvent(inputElement, 'onEndEditing');
 
     const buttonElement = getByTestId('button-0');
     const markerElement = getByTestId('marker-0');
@@ -73,10 +73,10 @@ describe('Home', () => {
     const inputElement = getByPlaceholderText('Adicionar novo todo...');
 
     fireEvent.changeText(inputElement, 'Primeira tarefa');
-    fireEvent(inputElement, 'submitEditing');
+    fireEvent(inputElement, 'onEndEditing');
     
     fireEvent.changeText(inputElement, 'Segunda tarefa');
-    fireEvent(inputElement, 'submitEditing');
+    fireEvent(inputElement, 'onEndEditing');
 
     const firstTaskTrashIcon = getByTestId('trash-0');
 
